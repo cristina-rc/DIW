@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+    <!--Favicono-->
+    <link rel="icon" type="image/jpg" sizes="32x32" href="img/favicono.jpg">
+    <title>Italian Pasta</title>
+
+    <!--Dibujando con canvas, script JS-->
+    <script>
+        function dibujar() {
+            var canvas = document.getElementById('canvas01');
+            if (canvas.getContext){
+                var ctx = canvas.getContext('2d');
+
+                ctx.beginPath();
+                ctx.moveTo(75,40);
+                ctx.bezierCurveTo(75,37,70,25,50,25);
+                ctx.bezierCurveTo(20,25,20,62.5,20,62.5);
+                ctx.bezierCurveTo(20,80,40,102,75,120);
+                ctx.bezierCurveTo(110,102,130,80,130,62.5);
+                ctx.bezierCurveTo(130,62.5,130,25,100,25);
+                ctx.bezierCurveTo(85,25,75,37,75,40);
+                ctx.fill();
+            }
+        }
+    </script>
+</head>
+<body onload="JavaScript:dibujar();">
+    <!--Cabecera-->
+    <header>
+        <!--Menú e imagen portada-->
+        <nav>
+            <ul class="menu">
+              <li><a href="#!">Home</a></li>
+              <li><a href="#pastas">Tipos de pasta</a></li>
+              <li><a href="#comosehace">¿Cómo se hace?</a></li>
+            </ul>
+          </nav>
+          <img class="portada" src="img/cabecera.PNG" alt="">
+    </header>
+
+    <main>  
+    <!--Introducción con animación @keyframes-->
+        <article class="introduccion">
+            <img class="tenedor" src="img/tenedor.png" alt="">
+            <div class="contenidoIntro">
+                <h1>Buon appetito!</h1>
+                <p>Si hay algo de lo que pueden presumir los italianos es de su gastronomía y su buena cocina.
+                    Su pasta fresca es una delicia. Y sus salsas toda una bendición para quienes
+                    disfruten mojando pan.<br><br> Cada región, provincia y pueblo elabora la pasta a su manera,
+                    con ingredientes propios y mucha tradición.         
+                    Seleccionamos algunos de los platos de pasta más deliciosos
+                    que deberías probar (al menos) una vez en la vida.</p>
+            </div>
+        </article>
+        <br><br><br>
+
+    <!--Imagen vectorial-->
+        <article class="historia">
+            <img id="vectorial" src="img/salsa.svg" alt="">
+            <p class="derechos">*Autor: Glitch (https://openclipart.org/artist/glitch) 
+            <br>Creative Commons Zero 1.0 License</p><br>
+
+    <!--Audio-->
+            <audio controls autoplay>
+                <source src="audio/historia.mp3" type="audio/mpeg">
+            </audio>
+            <p class="derechos">*Autor: Chef Joary Rodriguez Razo <br>Fuente: https://www.youtube.com/watch?v=jZiQ4Y0L8SI&t=39s/</p>
+        </article><br>
+
+    <!--Imagenes de mapa de bits con efecto Hover Overlay-->
+        <article id="pastas">            
+            <div class="tipo-pasta">
+                <img class="especialidad" src="img/boloñesa.png" alt="">
+                <div class="descripcion">
+                    <h1>Boloñesa</h1>
+                    <p>También llamada salsa bolognese o salsa de ragú, la salsa de pasta a base de carne y verduras típica de la ciudad de Bolonia en Italia. </p>
+                    <p class="derechos"><br><br>*Imagen de dominio público obtenida de www.freepng.es/</p>
+                </div>
+            </div>
+
+            <div class="tipo-pasta">
+                <img class="especialidad" src="img/carbonara.png" alt="">
+                <div class="descripcion">
+                    <h1>Carbonara</h1>
+                    <p>Originario del Lacio, y más concretamente de Roma. La receta original se basa en huevos, queso, aceite de oliva virgen extra, pancetta o guanciale y pimienta negra tocinera.</p>
+                    <p class="derechos"><br><br>*Imagen de dominio público obtenida de www.pixabay.com</p>
+                </div>
+            </div>
+
+            <div class="tipo-pasta">
+                <img class="especialidad" src="img/pesto.jpg" alt="">
+                <div class="descripcion">
+                    <h1>Pesto</h1>
+                    <p> Salsa originaria de la Liguria. Su ingrediente principal es la albahaca. Además, se muelen piñones y ajo, todo ello aderezado con queso parmesano y/o queso de oveja, y aceite de oliva. </p>
+                    <p class="derechos"><br><br>*"Pasta" por HatM (https://www.flickr.com/photos/14993459@N08) está bajo la licencia CC BY-NC-SA 2.0</p>
+                </div>
+            </div>
+        </article>
+        <br><br><br>
+
+    <!--Elemento picture responsive-->
+        <article id="comosehace">   
+            <picture>
+                <source media="(max-width: 480px)" srcset="img/harinaMovil.JPG">
+                <source media="(max-width: 1024px)" srcset="img/harinaTablet.JPG">
+                <img src="img/harina.JPG" alt="Huevos y Harina" style="width:100%;">
+            </picture><br><br><br>
+
+    <!--Dibujo con canvas-->
+            <div class="canvas">
+                <canvas id="canvas01" width="200" height="200"></canvas>
+            </div>
+        
+    <!--Video-->            
+            <div class="video">
+                <video src="video/comosehace.mp4" controls width="800" height="500"></video>
+                <p class="derechos">*Autor: "Cocineros Italianos" http://www.cocinerositalianos.net
+                <br> Fuente: https://www.youtube.com/watch?v=G8bBQspEAoQ</p>
+            </div><br><br>
+        
+    <!--Imagen gif con efecto rounded corners-->  
+            <div class="imgfinal">
+                <img id="gif" src="img/tagliatelle.gif" alt="">
+                <p class="derechos">*"Tagliatella" por Br3nda (https://www.flickr.com/photos/36251685@N00)
+                <br>está bajo la licencia CC BY-NC-SA 2.0</p>
+            </div>
+
+        </article>
+    </main>
+
+    <!--Pie de página y copyright-->
+    <footer>
+        <a href="mailto:cristinarc1991@gmail.com"><img class="media" alt="" src="img/email.png"></a>
+        
+        <br><p id="copyright">Copyright© 2021 Cristina Rodríguez Cruz<br>
+        cristinarc1991@gmail.com</p>
+    </footer>
+</body>
+</html>

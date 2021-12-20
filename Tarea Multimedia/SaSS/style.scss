@@ -1,0 +1,328 @@
+@import url("https://fonts.googleapis.com/css?family=Varela+Round");
+
+@use "sass:map";
+@use "sass:math";
+
+$letraEscritorio: 1.2vw;
+$letraMovil: 3vw;
+
+$colores: (
+  "azul":#5c6b73,
+  "naranja":#ebb85b,
+  "marron":#a16900,
+  "gris":#eaeaea
+);
+
+@mixin centrado {
+  text-align: center;
+  align-items: center;
+}
+
+@mixin pastas($dispositivo){
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  @include centrado;
+
+  @if $dispositivo == movil{        
+    flex-direction: column;
+  }
+}
+
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  letter-spacing: 1.1px;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  background: white;
+  //Función predefinida
+  font-family: "Varela Round";
+}
+
+//Menú con efecto hover
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  height: 20vh;
+  list-style: none;
+
+  & li{
+    width: 125px;
+    height: 50px;
+    transition: background-position-x 0.9s linear;
+    text-align: center;
+  
+    a {
+      font-size: 22px;
+      color: map-get($colores, "azul");
+      text-decoration: none;
+      transition: all 0.45s;
+    }
+  
+    &:hover a {
+      color: map-get($colores, "naranja");
+    }
+  
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+    
+  }
+}
+
+.portada {
+  width: 100%;
+  opacity: 0.8;
+}
+
+.tenedor{
+  width: 15vw;
+  margin-right: 90px;
+}
+
+//Introducción con animación @keyframes
+@keyframes animTexto {
+  from {
+    margin-left: 100%;
+    width: 100%;
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+.introduccion{
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  animation: {
+    duration: 4s;
+    name: animTexto;
+  }
+  margin: 20px;
+  @include centrado;
+  
+
+  & p{
+    font-size: 25px;
+  }
+
+  & h1{
+    color: map-get($colores, "azul");
+    font-size: 35px;
+  }
+}
+
+.contenidoIntro p, h1{
+  width: 400px;
+  font: {
+      size: $letraEscritorio;
+  }    
+  text-align: justify;
+}
+
+.historia{
+  text-align: center;
+}
+
+//Imagen vectorial
+#vectorial{
+  text-align: center;
+  width: 5vw;
+}
+
+#pastas{
+  @include pastas(escritorio);
+}
+
+.especialidad{
+  width: 25vw;
+}
+
+//Imagenes de mapa de bits con efecto Hover Overlay
+.descripcion{
+  font-size: $letraEscritorio; 
+  text-align: center;
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+
+  & h1{
+    color: map-get($colores, "marron");
+    text-align: center;
+  }
+}
+
+.tipo-pasta{
+  position: relative;
+  width: 50%;
+}
+
+.especialidad {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.tipo-pasta:hover .especialidad {
+  opacity: 0.3;
+}
+
+.tipo-pasta:hover .descripcion {
+  opacity: 1;
+}
+
+.derechos{
+  font-style: oblique;
+  font-size: 0.8vw;
+}
+
+//Video y Canvas
+.video, .canvas, .imgfinal{
+  text-align: center;
+}
+
+//Elemento picture
+picture{
+  width: 100%;
+}
+
+//Imagen gif
+#gif{
+  border-radius: 8px;
+  width: 20vw;  
+  text-align: center;
+}
+
+//Pie de página
+footer{
+  font: {
+      size: 1vw;           
+  }
+  clear:both;
+  padding: 30px;
+  text-align: center;
+  background-color: map-get($colores, "gris");
+  color:black;
+}
+
+/*responsive móvil*/
+@media (max-width: 480px) {
+  .portada {
+    width: 100%;
+    opacity: 0.8;
+    content:url(../img/cabeceraMovil.JPG);
+  }
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+    height: 20vh;
+    list-style: none;
+
+    & li{
+      width: 70px;
+      height: 30px;
+      transition: background-position-x 0.9s linear;
+      text-align: center;
+      margin-right: 100px;
+      
+      a {
+        font-size: 15px;
+        color: map-get($colores, "azul");
+        text-decoration: none;
+        transition: all 0.45s;
+      }
+    }
+  }
+
+  .tenedor{
+    width: 25vw;
+    margin-right: 50px;
+  }
+
+  .contenidoIntro p, h1{
+    width: 200px;
+    font: {
+        size: $letraMovil;
+    }    
+    text-align: justify;
+  }
+
+  #vectorial{
+    text-align: center;
+    width: 12vw;
+  }
+
+  #pastas{
+    @include pastas(movil);
+  }
+
+  .descripcion{
+    font-size: $letraMovil;   
+    text-align: justify;
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  
+    & h1{
+      color: map-get($colores, "marron");
+      text-align: center;
+    }
+  }
+
+  .especialidad{
+    width: 200px;
+  }
+
+  video{
+    width: 100%;
+  }
+
+  #gif{
+    border-radius: 8px;
+    width: 70vw;  
+    text-align: center;
+  }
+
+  .derechos{
+    font: {
+      style: oblique;
+      size: 2.5vw;
+    }
+  }
+
+  footer{
+    font-size: $letraMovil;  
+    clear:both;
+    padding: 30px;
+    text-align: center;
+    background-color: map-get($colores, "gris");
+    color:black;
+  }
+}
+
