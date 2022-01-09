@@ -1,0 +1,135 @@
+@font-face {
+    font-family: "Creepy-Blood";
+    src: url(../fuentes/Creepy-Blood.ttf);
+}
+
+//variables SCSS
+
+$columnSize: 1fr;
+$colorsHalloween: (
+    naranja: #FE9600,
+    amarillo: #DEB314,
+    claro: #FFEFC9,
+    rojo: #DE4033
+);
+
+$tabletSize: 768px;
+$desktopSize: 1024px;
+
+
+.contenedorGrid{
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: repeat(8px);
+    grid-gap: 1rem;
+    grid-template-areas: 
+    "header"
+    "main"
+    "aside"
+    "footer";
+
+    font-family: "Creepy-Blood";
+    text-align: center;
+    font-size: 40px;
+}
+
+header{
+    grid-area: header;
+    background-color: map-get($colorsHalloween, naranja);
+}
+
+header > img{
+    width: 50px;
+    text-align: center;
+}
+
+main{
+    grid-area: main;
+    background-color:map-get($colorsHalloween, amarillo);
+}
+
+aside{
+    grid-area: aside;
+    background-color:map-get($colorsHalloween, claro);
+}
+
+footer{
+    grid-area: footer;
+    background-color: map-get($colorsHalloween, rojo);
+}
+
+
+@media (min-width: $tabletSize) {
+
+    .contenedorGrid {
+      grid-template-columns: repeat(4, $columnSize);
+      grid-template-rows: repeat(5, 140px)
+    }
+
+    header{
+        grid-row: 1/2;
+        grid-column: 1/span 4;
+    }
+    
+    main{
+        grid-row: 2/5;
+        grid-column: 2/span 3;
+        text-align: left;
+    }    
+  
+    aside{
+        grid-row: 2/5;
+        grid-column: 1/2;
+    }
+    
+    footer{
+        grid-row: 5/6;
+        grid-column: 1/span 4;
+    }
+}
+
+@media (min-width: $desktopSize) {
+
+    .contenedorGrid {
+      grid-template-columns: repeat(5, $columnSize);
+      grid-template-rows: repeat(5, 140px)
+    }
+
+    header{
+        grid-row: 1/2;
+        grid-column: 1/span 5;
+    }
+    
+    main{
+        grid-row: 2/5;
+        grid-column: 2/6;
+        grid-template-columns: repeat(2, $columnSize);       
+        display: grid;
+        grid-gap: 1rem;
+    }
+
+    .cabecera{
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+    
+    .articulo1{
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+    
+    .articulo2{
+        grid-row: 2/3;
+        grid-column: 2/2;
+    }
+    
+    aside{
+        grid-row: 2/5;
+        grid-column: 1/2;
+    }
+    
+    footer{
+        grid-row: 5/6;
+        grid-column: 1/span 5;
+    }
+}
