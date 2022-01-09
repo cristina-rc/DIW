@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios jQuery</title>
+    <style>
+        .estiloboton1{
+            margin-left: 400px;
+            transition:all 1s;
+        }
+
+        .estiloboton2{
+            margin-left: 0%;
+            transition:all 3s;
+        }
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        //Ejercicio 1
+        $(document).ready(function(){
+            $("#enlace1").click(function(){
+                $("#enlace1").hide(5000, function(){
+                    $("#enlace1").show(3000, function(){
+                        $("#enlace1").hide(function(){
+                            $("#enlace1").show(200, function(){
+                                $("#enlace1").hide(function(){
+                                    $("#enlace1").show(2000, function(){
+                                        alert("He tardado 2 segundos en mostrarme");
+                                    });
+                                });
+                            });
+                        });
+                    });
+                });
+            });
+        });
+
+        //Ejercicio 2
+        $(document).ready(function(){
+            $("#boton1").hover(function(){
+                $("#boton1").animate({opacity:0.3},400);
+            });   
+
+            $("#boton1").mouseout(function(){
+                $("#boton1").animate({opacity:1},400);
+            });  
+        });
+
+        //Ejercicio 3
+        /*$(document).ready(function() {
+	        $('#boton2').click(function(){
+		        $('#boton2').animate({
+		            right: "-=400px"}, 'slow', function(){
+                        $('#boton2').click(function(){
+		                    $('#boton2').animate({
+		                        left: "0%"}, 'fast');
+                        });
+                    });
+	        });
+	    });*/
+
+         //Ejercicio 3
+        $(document).ready(function(){
+            $("#boton2").click(function(){
+                $(this).toggleClass("estiloboton1", 5000, "estiloboton2");
+            });  
+        });
+
+        //Ejercicio 5
+        $(document).ready(function(){
+            $('input.mayoredad').change(function(){
+                if($(this).is(":checked")){
+                    $('tr.mayoredad').hide();
+                    return;
+                }
+                $('tr.mayoredad').show();
+            });
+
+            $('input.socio').change(function(){
+                if($(this).is(":checked")){
+                    $('tr.socio').hide();
+                    return;
+                }
+                $('tr.socio').show();
+            });
+
+            $('input.tarjeta').change(function(){
+                if($(this).is(":checked")){
+                    $('tr.tarjeta').hide();
+                    return;
+                }
+                $('tr.tarjeta').show();
+            });
+        });
+
+        //Ejercicio 6
+        $(document).ready(function(){
+            $(".DAW").focus(function(){
+                $(this).css({"color":"red"});
+            });
+
+            $(".DAW").blur(function(){
+                $(this).css({"color":"green"});
+            });
+
+            $(".DIW").focus(function(){
+                $(this).css({"color":"red"});
+            });
+
+            $(".DIW").blur(function(){
+                $(this).css({"color":"green"});
+            });
+
+            $(".DWEC").focus(function(){
+                $(this).css({"color":"red"});
+            });
+
+            $(".DWEC").blur(function(){
+                $(this).css({"color":"green"});
+            });
+
+            $(".DWES").focus(function(){
+                $(this).css({"color":"red"});
+            });
+
+            $(".DWES").blur(function(){
+                $(this).css({"color":"green"});
+            });
+        });
+
+        //Ejercicio 7
+        $(document).ready(function(){
+            $('.selected').children().css('background-color', 'yellow');
+        }); 
+
+    </script>
+</head>
+<body>
+    <main>
+        <section>
+            <article id="ejercicio1">
+                <h1>Ejercicio 1</h1>
+                <div class="cuadrado">
+                    <a id="enlace1" href="#">Cristina</a>
+                </div>
+            </article><br>
+            <article id="ejercicio2">
+                <h1>Ejercicio 2</h1>
+                <button id="boton1">Cristina</button>
+                <br><br>
+            </article>
+            <article id="ejercicio3">
+                <h1>Ejercicio 3</h1>
+                <div class="ejercicio3">
+                    <button id="boton2" style="position:absolute;">Pulsa para moverme</button>
+                </div>
+            </article><br><br>
+            <article id="ejercicio4">
+                <h1>Ejercicio 5</h1>
+                <input type="checkbox" class="mayoredad" value="mayoredad">Mayor de edad<br>
+                <input type="checkbox" class="socio" value="socio">Socio<br>
+                <input type="checkbox" class="tarjeta" value="tarjeta">Tarjeta Regalo<br><br>
+
+                <table border="1">
+                    <tr class="mayoredad">
+                        <td>1. Debe ir acompañado de un adulto</td>
+                    </tr>
+                    <tr class="socio">
+                        <td>2. No puede traer invitados</td>
+                    </tr>
+                    <tr class="tarjeta">
+                        <td>3. Abonará 5% de tasas</td>
+                    </tr>
+                </table><br>
+            </article>
+            <article>
+                <h1>Ejercicio 6</h1>
+                <form>
+                    <b>Notas:</b><br>
+                    DAW: <input type="number" class="DAW"><br>
+                    DIW: <input type="number" class="DIW"><br>
+                    DWES: <input type="number" class="DWES"><br>
+                    DWEC: <input type="number" class="DWEC"><br>
+
+                    <input type="submit"><br>
+                </form><br>
+            </article>
+            <article>
+                <h1>Ejercicio 7</h1>
+                <div class="selected">
+                    <p>«A lo hecho, pecho»</p>
+                </div>
+
+                <div>
+                    <p>«De tal palo, tal astilla»</p>
+                </div>
+
+                <div>
+                    <p>«El que no corre, vuela»</p>
+                </div>
+
+                <div class="selected">
+                    <p>«En casa del herrero cuchara de palo»</p>
+                </div>
+                
+            </article>
+        </section>
+    </main>    
+</body>
+</html>
