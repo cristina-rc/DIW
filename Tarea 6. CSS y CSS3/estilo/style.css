@@ -1,0 +1,85 @@
+@font-face {
+  font-family: "JMH-Typewriter-dry";
+  src: url("../fuentes/JMH Typewriter dry.otf");
+}
+
+header {
+  text-align: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "JMH-Typewriter-dry";
+}
+
+nav > ul > li > ul > li > a {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "JMH-Typewriter-dry";
+}
+
+nav > ul > li {
+  display: inline;
+  width: 300px;
+  height: 150px;
+  padding: 5px 10px;
+  text-align: center;
+  color: #555b6e;
+  position: relative;
+}
+
+nav li ul li {
+  position: relative;
+}
+
+nav > ul > li > ul > li {
+  display: block;
+  width: 250px;
+  height: 25px;
+  padding: 5px 10px;
+  text-align: center;
+  color: #555b6e;
+  position: relative;
+  background-color: white;
+}
+
+nav li:hover {
+  background-color: #555b6e;
+  color: white;
+}
+
+nav li > ul {
+  display: none;
+}
+
+nav ul li:hover > ul {
+  display: block;
+  position: absolute;
+  top: 25px;
+  right: 0px;
+  text-align: center;
+  background-color: white;
+  color: #555b6e;
+}
+
+main img {
+  width: 100%;
+  height: auto;
+}
+
+footer {
+  font-family: "JMH-Typewriter-dry";
+  clear: both;
+  padding: 30px;
+  text-align: center;
+  background-color: #555b6e;
+  color: white;
+}
+
+footer img {
+  width: 50px;
+}
+/*# sourceMappingURL=style.css.map */

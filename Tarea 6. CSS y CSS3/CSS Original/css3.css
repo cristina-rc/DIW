@@ -1,0 +1,287 @@
+@import url("style.css");
+
+main{
+    text-align: center;
+    font-family: "JMH-Typewriter-dry";
+}
+
+main section article h1{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+main section article p{
+    margin: auto;
+    font-size: 20px;
+    text-align: center;
+}
+
+section hr{
+    width: 50%;
+}
+
+#border-radius{
+    border-radius: 35px;
+    background: #ddc9b4;
+    padding: 20px;
+    width: 300px;
+    height: 100px;
+    color: #555b6e;
+    font-size: 25px;
+    border: 5px solid #555b6e;
+    align-items: center;
+    display: flex;
+    margin: auto;
+}
+
+#border-images{
+    border: 20px solid transparent;
+    padding: 15px;
+    border-image: url(../img/nube.png) 70 round;
+    color: #555b6e;
+    height: 50%;
+    width: 300px;
+    height: 100px;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    font-size: 25px;
+}
+
+#backgrounds{
+    background-image: url("../img/pluma.png"), url("../img/hormigon.jpg");
+    background-position: right bottom, left top;
+    background-repeat: no-repeat, repeat;
+    width: 300px;
+    height: 100px;
+    align-items: center;
+    display: flex;
+    margin: auto;    
+    font-size: 25px;
+}
+
+#gradients{
+    background-image: linear-gradient(to right, #ddc9b4, #555b6e);
+    width: 300px;
+    height: 100px;
+    align-items: center;
+    display: flex;
+    margin: auto;    
+    font-size: 25px;
+}
+
+#text-shadows{
+    color: #555b6e;
+    background-color: #ddc9b4;
+    text-shadow: 10px 10px 5px white;
+    box-shadow: 10px 10px grey;
+    font-size: 25px;
+    width: 300px;
+    height: 100px;
+    align-items: center;
+    display: flex;
+    margin: auto;          
+}
+
+#text-effects{
+    white-space: nowrap;
+    border: 2px solid #ddc9b4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 300px;
+    height: 100px;
+    align-items: center;
+    display: flex;
+    margin: auto;     
+    font-size: 25px;  
+    color: #555b6e;
+    writing-mode: vertical-rl;
+}
+
+#twoD-transforms{
+    border-radius: 35px;
+    background: #ddc9b4;
+    padding: 20px;
+    width: 200px;
+    height: 100px;
+    color: #555b6e;
+    font-size: 25px;
+    border: 5px solid #555b6e;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    transform: matrix(1, -0.5, 0, 1, 0, 0);
+}
+
+#threeD-transforms{
+    background-image: url("../img/pluma.JPG");
+    width: 350px;
+    height: 200px;
+    transform: rotateX(150deg);
+    border: 5px solid #555b6e;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    font-size: 25px;
+}
+
+#transitions{
+    background-image: url("../img/flores.JPG");
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 150px;
+    border: 5px solid #ddc9b4;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    font-size: 25px;
+    border-radius: 15px 50px 30px;
+    transition: width 2s, height 4s;
+}
+
+#transitions:hover {
+  width: 300px;
+  height: 300px;
+}
+
+#animations{
+
+    width: 150px;
+    height: 150px;
+    background-color: #ddc9b4;
+    position: relative;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    border: 20px solid transparent;
+    border-image: url(../img/dado.png) 1000 stretch;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: 2;
+    animation-direction: alternate-reverse; 
+    
+}
+      
+@keyframes example {
+    0%   {background-color: #ddc9b4; left:0px; top:0px;}
+    25%  {background-color:#ddc1a3; left:100px; top:0px;}
+    50%  {background-color: #dbbb98; left:100px; top:100px;}
+    75%  {background-color:#685e54; left:0px; top:100px;}
+    100% {background-color:#747371; left:0px; top:0px;}
+}
+
+#tooltip{
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    color: #CD6155;
+}
+
+#tooltip #tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: lightgrey;
+    color: black;
+    text-align: center;
+    border-radius: 20px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 105%;
+}
+  
+  #tooltip:hover #tooltiptext {
+    visibility: visible;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #555b6e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+  
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+  
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+  
+.button:hover span {
+    padding-right: 25px;
+}
+  
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+}
+  
+.pagination a.active {
+    background-color: rosybrown;
+    color: white;
+    border: 1px solid black;
+}
+  
+.pagination a:hover:not(.active) {
+    background-color: rosybrown;
+}
+
+.multiplecolumns{
+    background-color: #EBF2F1;
+    column-count: 4;
+    column-gap: 40px;
+    column-rule: 5px solid #555b6e;
+}
+
+#resizing{
+    color: black;
+    background-color: lightsalmon;
+    text-shadow: 10px 10px 5px pink;
+    box-shadow: 10px 10px grey;
+    font-size: 25px;
+    width: 300px;
+    height: 100px;
+    align-items: center;
+    display: flex;
+    margin: auto;    
+    border: 2px solid;
+    padding: 20px; 
+    width: 300px;
+    resize: both;
+    overflow: auto;
+}
+

@@ -1,0 +1,146 @@
+@import "style.scss";
+
+@mixin centrado{
+    align-items: center;
+    display: flex;
+    margin: auto;
+}
+
+$rainbow: (
+
+   1: red,
+   2: orange,
+   3: yellow,
+   4: green,
+   5: blue,
+   6: purple
+);
+
+
+@font-face {
+    font-family: "Autumn-Sunrise";
+    src: url("../fuentes/Autumn\ Sunrise.ttf");
+}
+
+@font-face {
+    font-family: "Adieu-Mon-Ami";
+    src: url("../fuentes/Adieu\ Mon\ Ami\ DEMO.otf");
+}
+
+@font-face {
+    font-family: "Italian-Horskey";
+    src: url("../fuentes/Italian\ Horskey\ Script\ Demo.otf");
+}
+
+main{
+    text-align: center;
+    font-family: $letraWeb;
+}
+
+.centrar-listas {
+	text-align: center;
+}
+
+.centrar-listas ul,
+.centrar-listas ol {
+	text-align: left;
+	display: inline-block;
+}
+
+article section h1{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+article section h2{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+article hr{
+    width: 50%;
+}
+
+s{
+    color:red;
+    font-size: 0.75rem;
+}
+
+.lorem{
+    margin: 25px auto;
+    border: 1px solid green;
+    width: 500px;
+    height: 200px;
+    box-shadow: 7px 7px 15px green; 
+}
+
+#iris{
+    background: linear-gradient(to right, map-get($rainbow, 1), map-get($rainbow, 2), map-get($rainbow, 3), map-get($rainbow, 4), map-get($rainbow, 5), map-get($rainbow, 6));
+    width: 300px;
+    height: 100px;
+    @include centrado;
+}
+
+#atributos a[target] {
+    background-color: orange;
+}
+
+#atributos a[href^="https"] {
+    background-color: yellow;
+}
+
+#menu a {
+    /* Especifique los valores predeterminados no transparentes a ciertas propiedades,
+       lo que les permite ser diseñado con el estado :visited */
+    background-color: white;
+    border: 0px solid white;
+
+    &:visited{
+        color: green;
+        background-color: orange;
+        font-size: 30px !important;
+    }
+}
+
+@each $idioma, $letra, $tamano, $color in   (it, "Italian-Horskey", 35px, green),
+                                            (es, "Autumn-Sunrise", 3rem, red),
+                                            (fr, "Adieu-Mon-Ami", 15pt, blue) {
+  :lang(#{$idioma}){
+    font-family: $letra;
+    font-size: $tamano;
+    color: $color;
+  }
+}
+
+#pseudo-clases li:nth-child(even){
+    color:lightseagreen;
+}
+
+#pseudo-clases li:nth-child(2n+1){
+    color:pink;
+}
+
+#pseudo-clases li:nth-child(6){
+    background-color: lightgrey;
+}
+
+#pseudo-clases li:nth-child(7){
+    background-color: lightgrey;
+}
+#pseudo-clases li:last-child{
+    color:red;
+}
+
+#pseudo-elementos p::first-letter{
+    color: palevioletred;
+    font-family: "Italian-Horskey";
+    font-size: 30px;
+}
+
+#pseudo-elementos .p1::first-line{
+    font-style: italic;
+}
+
+#pseudo-elementos p::after {
+    content: ".";
+  }

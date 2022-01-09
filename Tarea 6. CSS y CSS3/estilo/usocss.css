@@ -1,0 +1,231 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "JMH-Typewriter-dry";
+  src: url("../fuentes/JMH Typewriter dry.otf");
+}
+
+header {
+  text-align: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "JMH-Typewriter-dry";
+}
+
+nav > ul > li > ul > li > a {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "JMH-Typewriter-dry";
+}
+
+nav > ul > li {
+  display: inline;
+  width: 300px;
+  height: 150px;
+  padding: 5px 10px;
+  text-align: center;
+  color: #555b6e;
+  position: relative;
+}
+
+nav li ul li {
+  position: relative;
+}
+
+nav > ul > li > ul > li {
+  display: block;
+  width: 250px;
+  height: 25px;
+  padding: 5px 10px;
+  text-align: center;
+  color: #555b6e;
+  position: relative;
+  background-color: white;
+}
+
+nav li:hover {
+  background-color: #555b6e;
+  color: white;
+}
+
+nav li > ul {
+  display: none;
+}
+
+nav ul li:hover > ul {
+  display: block;
+  position: absolute;
+  top: 25px;
+  right: 0px;
+  text-align: center;
+  background-color: white;
+  color: #555b6e;
+}
+
+main img {
+  width: 100%;
+  height: auto;
+}
+
+footer {
+  font-family: "JMH-Typewriter-dry";
+  clear: both;
+  padding: 30px;
+  text-align: center;
+  background-color: #555b6e;
+  color: white;
+}
+
+footer img {
+  width: 50px;
+}
+
+@font-face {
+  font-family: "Autumn-Sunrise";
+  src: url("../fuentes/Autumn Sunrise.ttf");
+}
+
+@font-face {
+  font-family: "Adieu-Mon-Ami";
+  src: url("../fuentes/Adieu Mon Ami DEMO.otf");
+}
+
+@font-face {
+  font-family: "Italian-Horskey";
+  src: url("../fuentes/Italian Horskey Script Demo.otf");
+}
+
+main {
+  text-align: center;
+  font-family: "JMH-Typewriter-dry";
+}
+
+.centrar-listas {
+  text-align: center;
+}
+
+.centrar-listas ul,
+.centrar-listas ol {
+  text-align: left;
+  display: inline-block;
+}
+
+article section h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+article section h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+article hr {
+  width: 50%;
+}
+
+s {
+  color: red;
+  font-size: 0.75rem;
+}
+
+.lorem {
+  margin: 25px auto;
+  border: 1px solid green;
+  width: 500px;
+  height: 200px;
+  -webkit-box-shadow: 7px 7px 15px green;
+          box-shadow: 7px 7px 15px green;
+}
+
+#iris {
+  background: -webkit-gradient(linear, left top, right top, from(red), color-stop(orange), color-stop(yellow), color-stop(green), color-stop(blue), to(purple));
+  background: linear-gradient(to right, red, orange, yellow, green, blue, purple);
+  width: 300px;
+  height: 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+}
+
+#atributos a[target] {
+  background-color: orange;
+}
+
+#atributos a[href^="https"] {
+  background-color: yellow;
+}
+
+#menu a {
+  /* Especifique los valores predeterminados no transparentes a ciertas propiedades,
+       lo que les permite ser diseñado con el estado :visited */
+  background-color: white;
+  border: 0px solid white;
+}
+
+#menu a:visited {
+  color: green;
+  background-color: orange;
+  font-size: 30px !important;
+}
+
+:lang(it) {
+  font-family: "Italian-Horskey";
+  font-size: 35px;
+  color: green;
+}
+
+:lang(es) {
+  font-family: "Autumn-Sunrise";
+  font-size: 3rem;
+  color: red;
+}
+
+:lang(fr) {
+  font-family: "Adieu-Mon-Ami";
+  font-size: 15pt;
+  color: blue;
+}
+
+#pseudo-clases li:nth-child(even) {
+  color: lightseagreen;
+}
+
+#pseudo-clases li:nth-child(2n+1) {
+  color: pink;
+}
+
+#pseudo-clases li:nth-child(6) {
+  background-color: lightgrey;
+}
+
+#pseudo-clases li:nth-child(7) {
+  background-color: lightgrey;
+}
+
+#pseudo-clases li:last-child {
+  color: red;
+}
+
+#pseudo-elementos p::first-letter {
+  color: palevioletred;
+  font-family: "Italian-Horskey";
+  font-size: 30px;
+}
+
+#pseudo-elementos .p1::first-line {
+  font-style: italic;
+}
+
+#pseudo-elementos p::after {
+  content: ".";
+}
+/*# sourceMappingURL=usocss.css.map */

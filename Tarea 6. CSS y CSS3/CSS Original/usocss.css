@@ -1,0 +1,139 @@
+@import url("style.css");
+
+@font-face {
+    font-family: "Autumn-Sunrise";
+    src: url(../fuentes/Autumn\ Sunrise.ttf);
+}
+
+@font-face {
+    font-family: "Adieu-Mon-Ami";
+    src: url(../fuentes/Adieu\ Mon\ Ami\ DEMO.otf);
+}
+
+@font-face {
+    font-family: "Italian-Horskey";
+    src: url(../fuentes/Italian\ Horskey\ Script\ Demo.otf);
+}
+
+main{
+    text-align: center;
+    font-family: "JMH-Typewriter-dry";
+}
+
+.centrar-listas {
+	text-align: center;
+}
+
+.centrar-listas ul,
+.centrar-listas ol {
+	text-align: left;
+	display: inline-block;
+}
+
+article section h1{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+article section h2{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+article hr{
+    width: 50%;
+}
+
+s{
+    color:red;
+    font-size: 0.75rem;
+}
+
+.lorem{
+    margin: 25px auto;
+    border: 1px solid green;
+    width: 500px;
+    height: 200px;
+    box-shadow: 7px 7px 15px green; 
+}
+
+#iris{
+    background: linear-gradient(to right, red, orange, yellow, green, blue, purple);
+    width: 300px;
+    height: 100px;
+    align-items: center;
+    display: flex;
+    margin: auto;
+}
+
+#atributos a[target] {
+    background-color: orange;
+}
+
+#atributos a[href^="https"] {
+    background-color: yellow;
+}
+
+#menu a {
+    /* Especifique los valores predeterminados no transparentes a ciertas propiedades,
+       lo que les permite ser diseñado con el estado :visited */
+    background-color: white;
+    border: 0px solid white;
+}
+
+#menu a:visited{
+    color: green;
+    background-color: orange;
+    font-size: 30px !important;
+}
+
+:lang(it){
+    font-family: "Italian-Horskey";
+    font-size: 35px;
+    color: green;
+}
+
+:lang(es){
+    font-family: "Autumn-Sunrise";
+    font-size: 3rem;
+    color: red;
+}
+
+:lang(fr){
+    font-family: "Adieu-Mon-Ami";
+    font-size: 15pt;
+    color: blue;
+}
+
+#pseudo-clases li:nth-child(even){
+    color:lightseagreen;
+}
+
+#pseudo-clases li:nth-child(2n+1){
+    color:pink;
+}
+
+#pseudo-clases li:nth-child(6){
+    background-color: lightgrey;
+}
+
+#pseudo-clases li:nth-child(7){
+    background-color: lightgrey;
+}
+#pseudo-clases li:last-child{
+    color:red;
+}
+
+#pseudo-elementos p::first-letter{
+    color: palevioletred;
+    font-family: "Italian-Horskey";
+    font-size: 30px;
+}
+
+#pseudo-elementos .p1::first-line{
+    font-style: italic;
+}
+
+#pseudo-elementos p::after {
+    content: ".";
+  }

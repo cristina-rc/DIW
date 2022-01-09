@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilo/usocss.css">
+    <link rel="icon" type="image/jpg" sizes="32x32" href="img/favicono.png">
+    <title>CSS3</title>
+</head>
+<body>
+    <!--Cabecera-->
+    <header>
+        <!--Menú desplegable-->
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="CSS3.html">CSS3</a>
+                    <ul>
+                        <li><a href="CSS3.html#border-radius">Rounded Corners</a></li>
+                        <li><a href="CSS3.html#border-images">Border Images</a></li>
+                        <li><a href="CSS3.html#backgrounds">Backgrounds</a></li>
+                        <li><a href="CSS3.html#gradients">Gradients</a></li>
+                        <li><a href="CSS3.html#text-shadows">Shadows</a></li>
+                        <li><a href="CSS3.html#text-effects">Text Effects</a></li>
+                        <li><a href="CSS3.html#twoD-transforms">2D Transforms</a></li>
+                        <li><a href="CSS3.html#threeD-transforms">3D Transforms</a></li>
+                        <li><a href="CSS3.html#transitions">Transitions</a></li>
+                        <li><a href="CSS3.html#animations">Animations</a></li>
+                    </ul>
+                </li>
+                <li><a href="usocss.html">USO DE CSS</a>
+                    <ul>
+                        <li><a href="usocss.html#selectores">Selectores</a></li>
+                    </ul>
+                </li>               
+            </ul>
+        </nav> 
+    </header>
+
+    <!--Main con section para cada propiedad-->
+    <main>
+        <article id="selectores">
+            <section id="menu">
+                <div class="centrar-listas">
+                    <ul>
+                        <li><a href= "#etiqueta">De etiqueta</a></li>
+                        <li><a href= "#clases">De clases</a></li>
+                        <li><a href= "#identificador">De identificador</a></li>
+                        <li><a href= "#atributos">De atributos</a></li>
+                        <li><a href= "#pseudo-clases">De pseudo-clases</a></li>
+                        <li><a href= "#pseudo-elementos">De pseudo-elementos</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="etiqueta">
+                <h1>De etiqueta</h1>
+                <s>Esto está mal</s>
+            </section>
+            <br><hr>
+            
+            <section id="clases">
+                <h1>De clases</h1>
+                <div class ="lorem">
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+                    culpa qui officia deserunt mollit anim id est laborum."
+                </div>
+            </section>
+            <br><hr>
+
+            <section id="identificador">
+                <h1>De identificador</h1>
+                <div id ="iris">
+                </div>
+            </section>
+            <br><hr>
+
+            <section id="atributos">
+                <h1>De atributos</h1>
+                <h2><u>Enlaces a periódicos</u></h2>
+                <div class="centrar-listas">
+                    <ul>
+                        <li><a href= "https://www.expansion.com">Expansión</a></li>
+                        <li><a href= "http://www.larazon.es">La Razón</a></li>
+                        <li><a href= "construccion.html" target="_blank">Periódico en construcción</a></li>
+                    </ul>
+                </div>
+            </section>
+            <br><hr>
+            
+            <section id="pseudo-clases">
+                <h1>De pseudo-clases</h1>
+                <h2><u>Estilos según idioma</u></h2>
+                
+                <p lang="it">La salute è ricchezza va un detto comune.</p>
+                <p lang="es">El que no corre, vuela</p>
+                <p lang="fr">Autre temps, autres mœurs</p>
+
+                <h2><u>Estilos días de la semana</u></h2>
+                <div class="centrar-listas">
+                    <ol>
+                        <li>Lunes</li>
+                        <li>Martes</li>
+                        <li>Miércoles</li>
+                        <li>Jueves</li>
+                        <li>Viernes</li>
+                        <li>Sábado</li>
+                        <li>Domingo</li>
+                    </ol>
+                </div>
+            </section>
+            <br><hr>
+
+            <section id="pseudo-elementos">
+                <h1>Pseudo-elementos</h1>
+                <h2>Estilos en párrafo</h2>
+                <p class=p1>Érase una vez un caballero que salió por el mundo a buscar la vida 
+                    y las aventuras. Yendo por un camino se encontró con cuatro animales: un león,
+                        un galgo, un águila y una hormiga</p>
+                <p class=p2>Y colorín colorado este cuento se ha terminado</p>
+            </section>
+        </article>           
+        <hr>
+    </main>
+
+    <!--Pie de página-->
+    <footer>
+        <p>Cristina Rodríguez Cruz<br><br>
+        <a href="mailto:cristinarc1991@gmail.com"><img alt="" src="img/email.png"></a>
+        <hr><br>
+        Copyright© 2021 Cristina Rodríguez Cruz<br>
+        Todos los derechos reservados
+    </footer>
+    
+</body>
+</html>
